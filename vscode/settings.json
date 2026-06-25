@@ -260,6 +260,9 @@
 
   // 2. Inlay Hints (Mostra o nome dos parâmetros direto na chamada da função)
   "python.analysis.inlayHints.variableTypes": true,
+  "python.analysis.completeFunctionParens": true,
+  "python.analysis.inlayHints.callArgumentNames": "all",
+  "python.analysis.inlayHints.functionReturnTypes": true,
 
   // 3. Validações Nativas Ativas (Pega erros de sintaxe em CSS e HTML)
   "html.validate.scripts": true,
@@ -298,5 +301,6 @@
   "terminal.integrated.fontSize": 18,
   "markdown.preview.fontSize": 18,
   "markdown.updateLinksOnFileMove.enabled": "always",
-  "python.terminal.activateEnvInCurrentTerminal": true
+  "python.terminal.activateEnvInCurrentTerminal": true,
+  "codesnap.showWindowTitle": true
 }
