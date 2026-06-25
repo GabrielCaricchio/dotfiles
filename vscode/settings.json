@@ -303,4 +303,75 @@
   "markdown.updateLinksOnFileMove.enabled": "always",
   "python.terminal.activateEnvInCurrentTerminal": true,
   "codesnap.showWindowTitle": true
+
+  // Configurações pensadas para o uso de Python (com django e flask), Node, Js,TS, react, angular, html(e modificações feitas por frameworks), css, java
+  // Checagens e formatações feitas com: ESLint (Web), Prettier(Web), Ruff(Python) e Pylance(Python)
+  // Extensões utilizadas:
+  // Angular Language Service - Autor: Angular
+  // CodeSnap - Autor: Autor: adpyke
+  // Color Highlight - Autor: Sergii N
+  // Database Client - Autor: Database Client
+  // Database Client JDBC - Autor: Database Client
+  // Debugger for Java - Autor: Microsoft
+  // Django - Autor: Autor: Baptiste Darthenay
+  // DotENV - Author: Autor: mikestead
+  // EditorConfig - Autor: EditorConfig
+  // Error Lens - Autor: Alexander
+  // ESLint - Autor: Microsoft
+  // Extension Pack for Java - Autor: Microsoft
+  // Git History - Autor: Don Jayamanne
+  // Github Pull Requests - Autor: Github
+  // Gadle for Java - Autor: Microsoft
+  // Image preview - Autor: Kiss Tamás
+  // Import Cost - Autor: Wix
+  // Jinja - Autor: wholroyd
+  // Jupyter - Autor: Microsoft
+  // Jupyter Cell Tags - Autor: Microsoft
+  // Jupyter Keymap - Autor: Microsoft
+  // Jupyter Notebook Renderers - Autor: Microsoft
+  // Jupyter Slide Show - Autor: Microsoft
+  // Language Support for Java(TM) by Red Hat - Autor: Red Hat
+  // Live Server - Autor: Ritwick Dey
+  // Markdown PDF - Autor: yzane
+  // Marterial Icon Theme - Autor: Philipp Kief
+  // Maven for Java - Autor: Microsoft
+  // MongoDB for VS Code - Autor: MongoDB
+  // Officer Viewer - Autor: Database Client
+  // Prettier - Code Formatter - Autor: Prettier
+  // Project Manager - Autor: Alessandro Fragnani
+  // Project Manager for Java - Autor: Microsoft
+  // Pylance - Autor: Microsoft
+  // Python - Autor: Microsoft
+  // Python Debugger - Autor: Microsoft
+  // Python Environments - Autor: Microsoft
+  // Python Indent - Autor: Kevin Rose
+  // Rainbow CSV - Autor: mechatroner
+  // Reload - Autor: natqe
+  // Ruff - Autor: Astral Software
+  // Spring Boot Dashboard - Autor: Microsoft
+  // Spring Boot Extension Pack - Autor: VMware
+  // Spring Boot Tools - Autor: VMware
+  // Spring Initializr Java Support - Autor: Microsoft
+  // SQLite Viewer - Autor: Florian Klampfer
+  // Test Runner for Java - Microsoft
+  // Thunder Client (uma alternativa é o Postman da Postman, tem app como o Insomnia, Postman e Bruno) - Autor: Thunder Client
+  // Todo Highlight - Autor: Wayou Liu
+  // Code Spell CHecker (este é para checar escrita em ingles, tem outra extensão complementar se quiser checar português) - Autor: Street Side Software
+  // Extensões desativadas: Code Spell Checker, Github Copilot Chat
+  // ///////////////////////////////
+  // Opções extras(não instaladas):
+  // Live Share - Autor: Microsoft
+  // indent-rainbow - Autor: oderwat
+  // Portuguese (Brasil) Language Pack for Visual Studio Code - Autor: Microsoft
+  // Trailing Spaces - Autor: Shardul Mahadik
+  // Temas: Ayu - Autor: teabyii , Tokio Night - Autor: enkia, Github Theme - Autor: Github ,vscode-icons - Autor: VScode Icons Team, Symbols - Autor: Miguel Solorio
+  // Snippets:
+  // Javascript (ES6) code snippets - Autor: charalampos karypidis
+  // ES7 + React/Redux/React-Native Snippets - Autor: dsznajder
+  // Bootstrap 5 Quick Snippets - Autor: Anbuselvan Annamalai
+  // Djaneiro - Django Snippets - Autor: Scott Barkman
+  // flask-snippets - Autor: cstrap
+  // HTML CSS Support - Autor: ecmel
+  // Tailwind CSS IntelliSense - Autor: Tailwind Labs
+  // Para php: PHP - Autor: DEVSENSE | PHP Extension Pack - Autor: Xdebug + PHP Server - Autor: brapifra
 }
