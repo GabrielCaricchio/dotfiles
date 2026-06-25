@@ -1,0 +1,143 @@
+{   // Configuração do vs code 24/06/26
+    "workbench.startupEditor": "none",
+    "files.autoSave": "afterDelay",
+    "chat.disableAIFeatures": true,
+    "extensions.autoUpdate": false,
+    "editor.fontSize": 18,
+    "workbench.iconTheme": "material-icon-theme",
+
+    // Ajustes de IA
+    "window.zoomLevel": 0,
+
+    // ========================================================================
+    // 0. AUTOMAÇÕES GLOBAIS DE SALVAMENTO & INTEGRAÇÃO ESLINT
+    // ========================================================================
+    // Corrige erros de lógica do ESLint (JS/TS) automaticamente ao salvar
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    },
+    // Proíbe o ESLint de brigar com o Prettier pela formatação visual
+    "eslint.format.enable": false,
+
+    // ========================================================================
+    // 1. PYTHON, TESTING & ECOSSISTEMA MODERNIZADO (Pylance + Ruff)
+    // ========================================================================
+    "python.languageServer": "Pylance",
+    "python.analysis.typeCheckingMode": "standard",
+    "python.analysis.autoImportCompletions": true,
+    "python.defaultInterpreterPath": "venv/bin/python",
+
+    // Ativação correta do Pytest (Aproveitado da sua configuração)
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true,
+    "python.testing.pytestArgs": [],
+
+    // Configuração nativa e moderna do Ruff (Substitui Flake8/Autopep8)
+    "ruff.lineLength": 79,
+    "ruff.lint.select": ["E", "F", "W", "I", "B", "UP", "SIM"],
+
+    "[python]": {
+      "editor.defaultFormatter": "charliermarsh.ruff",
+      "editor.tabSize": 4,
+      "editor.insertSpaces": true,
+      "editor.formatOnSave": true,
+      // Sobrescreve o codeActions global para usar o Ruff no ecossistema Python
+      "editor.codeActionsOnSave": {
+        "source.organizeImports.ruff": "explicit",
+        "source.fixAll.ruff": "explicit"
+      }
+    },
+
+    // ========================================================================
+    // 2. FRONTEND COM PRETTIER ISOLADO (JS, TS, React, Angular, CSS, HTML)
+    // ========================================================================
+    "prettier.printWidth": 80,
+    "prettier.singleQuote": true,
+    "prettier.trailingComma": "all",
+    "prettier.arrowParens": "always",
+    "prettier.htmlWhitespaceSensitivity": "ignore",
+
+    "[javascript]": { 
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true,
+      "editor.tabSize": 2,
+      "editor.insertSpaces": true 
+    },
+    "[typescript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true,
+      "editor.tabSize": 2,
+      "editor.insertSpaces": true
+    },
+    "[javascriptreact]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true,
+      "editor.tabSize": 2,
+      "editor.insertSpaces": true
+    },
+    "[typescriptreact]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true,
+      "editor.tabSize": 2,
+      "editor.insertSpaces": true
+    },
+    "[css]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true,
+      "editor.tabSize": 2,
+      "editor.insertSpaces": true
+    },
+    "[html]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true,
+      "editor.tabSize": 2,
+      "editor.insertSpaces": true
+    },
+
+    // Configuração extra para facilitar o Debug do Node.js no VS Code
+    "debug.javascript.autoAttachFilter": "smart", // Prepara o VS Code para debugar o Node automaticamente
+
+    // ========================================================================
+    // 3. BLINDAGEM DE TEMPLATES (Django & Flask/Jinja) - Sem risco de quebrar
+    // ========================================================================
+    "[django-html]": {
+      "editor.defaultFormatter": null, 
+      "editor.formatOnSave": false,
+      "editor.tabSize": 2,
+      "editor.insertSpaces": true,
+      "editor.quickSuggestions": { "other": true, "comments": true, "strings": true }
+    },
+    "[jinja-html]": {
+      "editor.defaultFormatter": null,
+      "editor.formatOnSave": false,
+      "editor.tabSize": 2,
+      "editor.insertSpaces": true,
+      "editor.quickSuggestions": { "other": true, "comments": true, "strings": true }
+    },
+
+    // ========================================================================
+    // 4. ASSOCIAÇÕES DE ARQUIVOS CORRIGIDAS (Sem conflito)
+    // ========================================================================
+    "files.associations": {
+      "*.jsx": "javascriptreact",
+      "*.tsx": "typescriptreact",
+      "*.env*": "properties", // Garante o realce de cores para a extensão Dotenv
+      "*.jinja": "jinja-html", // Facilita a separação de templates do Flask
+      "*.jinja2": "jinja-html",
+      "**/templates/**/*.html": "django-html",
+      "**/base_templates/**/*.html": "django-html",
+      "**/requirements{/**,*}.{txt,in}": "pip-requirements"
+    },
+
+    // ========================================================================
+    // 5. EMMET AUTOMATION (Aproveitado e corrigido da sua configuração)
+    // ========================================================================
+    "emmet.includeLanguages": {
+      "django-html": "html",
+      "jinja-html": "html",
+      "javascript": "javascriptreact",
+      "typescript": "typescriptreact",
+      "angular.html": "html"
+    }
+}
+
