@@ -283,5 +283,20 @@
     },
     "editor.tabSize": 4,
     "editor.insertSpaces": true
-  }
+  },
+  "telemetry.feedback.enabled": false,
+  "vscode-office.enableTelemetry": false,
+  "mdb.sendTelemetry": false,
+  "database-client.telemetry.usesOnlineServices": false,
+  "telemetry.editStats.enabled": false,
+  "workbench.activityBar.compact": true,
+  "window.density.editorTabHeight": "compact",
+  "chat.editor.fontSize": 18,
+  "chat.fontSize": 18,
+  "debug.console.fontSize": 18,
+  "scm.inputFontSize": 18,
+  "terminal.integrated.fontSize": 18,
+  "markdown.preview.fontSize": 18,
+  "markdown.updateLinksOnFileMove.enabled": "always",
+  "python.terminal.activateEnvInCurrentTerminal": true
 }
