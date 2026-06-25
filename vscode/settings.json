@@ -1,143 +1,279 @@
-{   // Configuração do vs code 24/06/26
-    "workbench.startupEditor": "none",
-    "files.autoSave": "afterDelay",
-    "chat.disableAIFeatures": true,
-    "extensions.autoUpdate": false,
-    "editor.fontSize": 18,
-    "workbench.iconTheme": "material-icon-theme",
+{
+  // Configuração do vs code 24/06/26
+  "workbench.startupEditor": "none",
+  "files.autoSave": "afterDelay",
+  "chat.disableAIFeatures": true,
+  "extensions.autoUpdate": false,
+  "editor.fontSize": 18,
+  "workbench.iconTheme": "material-icon-theme",
 
-    // Ajustes de IA
-    "window.zoomLevel": 0,
+  // Ajustes de IA
+  "window.zoomLevel": 0,
+  "telemetry.telemetryLevel": "off", // Desativa o envio de dados de uso (economiza internet e processamento em segundo plano)
+  // ========================================================================
+  // 0. AUTOMAÇÕES GLOBAIS DE SALVAMENTO & INTEGRAÇÃO ESLINT
+  // ========================================================================
+  // Corrige erros de lógica do ESLint (JS/TS) automaticamente ao salvar
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  // Proíbe o ESLint de brigar com o Prettier pela formatação visual
+  "eslint.format.enable": false,
 
-    // ========================================================================
-    // 0. AUTOMAÇÕES GLOBAIS DE SALVAMENTO & INTEGRAÇÃO ESLINT
-    // ========================================================================
-    // Corrige erros de lógica do ESLint (JS/TS) automaticamente ao salvar
+  // ========================================================================
+  // 1. PYTHON, TESTING & ECOSSISTEMA MODERNIZADO (Pylance + Ruff)
+  // ========================================================================
+  "python.languageServer": "Pylance",
+  // "python.analysis.typeCheckingMode": "standard",
+  "python.analysis.typeCheckingMode": "strict",
+  "python.analysis.autoImportCompletions": true,
+  "python.defaultInterpreterPath": "venv/bin/python",
+
+  // Ativação correta do Pytest (Aproveitado da sua configuração)
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestEnabled": true,
+  "python.testing.pytestArgs": [],
+
+  // Configuração nativa e moderna do Ruff (Substitui Flake8/Autopep8)
+  "ruff.lineLength": 79,
+  "ruff.lint.select": ["E", "F", "W", "I", "B", "UP", "SIM"],
+
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.formatOnSave": true,
+    // Sobrescreve o codeActions global para usar o Ruff no ecossistema Python
     "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": "explicit"
-    },
-    // Proíbe o ESLint de brigar com o Prettier pela formatação visual
-    "eslint.format.enable": false,
-
-    // ========================================================================
-    // 1. PYTHON, TESTING & ECOSSISTEMA MODERNIZADO (Pylance + Ruff)
-    // ========================================================================
-    "python.languageServer": "Pylance",
-    "python.analysis.typeCheckingMode": "standard",
-    "python.analysis.autoImportCompletions": true,
-    "python.defaultInterpreterPath": "venv/bin/python",
-
-    // Ativação correta do Pytest (Aproveitado da sua configuração)
-    "python.testing.unittestEnabled": false,
-    "python.testing.pytestEnabled": true,
-    "python.testing.pytestArgs": [],
-
-    // Configuração nativa e moderna do Ruff (Substitui Flake8/Autopep8)
-    "ruff.lineLength": 79,
-    "ruff.lint.select": ["E", "F", "W", "I", "B", "UP", "SIM"],
-
-    "[python]": {
-      "editor.defaultFormatter": "charliermarsh.ruff",
-      "editor.tabSize": 4,
-      "editor.insertSpaces": true,
-      "editor.formatOnSave": true,
-      // Sobrescreve o codeActions global para usar o Ruff no ecossistema Python
-      "editor.codeActionsOnSave": {
-        "source.organizeImports.ruff": "explicit",
-        "source.fixAll.ruff": "explicit"
-      }
-    },
-
-    // ========================================================================
-    // 2. FRONTEND COM PRETTIER ISOLADO (JS, TS, React, Angular, CSS, HTML)
-    // ========================================================================
-    "prettier.printWidth": 80,
-    "prettier.singleQuote": true,
-    "prettier.trailingComma": "all",
-    "prettier.arrowParens": "always",
-    "prettier.htmlWhitespaceSensitivity": "ignore",
-
-    "[javascript]": { 
-      "editor.defaultFormatter": "esbenp.prettier-vscode",
-      "editor.formatOnSave": true,
-      "editor.tabSize": 2,
-      "editor.insertSpaces": true 
-    },
-    "[typescript]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode",
-      "editor.formatOnSave": true,
-      "editor.tabSize": 2,
-      "editor.insertSpaces": true
-    },
-    "[javascriptreact]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode",
-      "editor.formatOnSave": true,
-      "editor.tabSize": 2,
-      "editor.insertSpaces": true
-    },
-    "[typescriptreact]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode",
-      "editor.formatOnSave": true,
-      "editor.tabSize": 2,
-      "editor.insertSpaces": true
-    },
-    "[css]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode",
-      "editor.formatOnSave": true,
-      "editor.tabSize": 2,
-      "editor.insertSpaces": true
-    },
-    "[html]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode",
-      "editor.formatOnSave": true,
-      "editor.tabSize": 2,
-      "editor.insertSpaces": true
-    },
-
-    // Configuração extra para facilitar o Debug do Node.js no VS Code
-    "debug.javascript.autoAttachFilter": "smart", // Prepara o VS Code para debugar o Node automaticamente
-
-    // ========================================================================
-    // 3. BLINDAGEM DE TEMPLATES (Django & Flask/Jinja) - Sem risco de quebrar
-    // ========================================================================
-    "[django-html]": {
-      "editor.defaultFormatter": null, 
-      "editor.formatOnSave": false,
-      "editor.tabSize": 2,
-      "editor.insertSpaces": true,
-      "editor.quickSuggestions": { "other": true, "comments": true, "strings": true }
-    },
-    "[jinja-html]": {
-      "editor.defaultFormatter": null,
-      "editor.formatOnSave": false,
-      "editor.tabSize": 2,
-      "editor.insertSpaces": true,
-      "editor.quickSuggestions": { "other": true, "comments": true, "strings": true }
-    },
-
-    // ========================================================================
-    // 4. ASSOCIAÇÕES DE ARQUIVOS CORRIGIDAS (Sem conflito)
-    // ========================================================================
-    "files.associations": {
-      "*.jsx": "javascriptreact",
-      "*.tsx": "typescriptreact",
-      "*.env*": "properties", // Garante o realce de cores para a extensão Dotenv
-      "*.jinja": "jinja-html", // Facilita a separação de templates do Flask
-      "*.jinja2": "jinja-html",
-      "**/templates/**/*.html": "django-html",
-      "**/base_templates/**/*.html": "django-html",
-      "**/requirements{/**,*}.{txt,in}": "pip-requirements"
-    },
-
-    // ========================================================================
-    // 5. EMMET AUTOMATION (Aproveitado e corrigido da sua configuração)
-    // ========================================================================
-    "emmet.includeLanguages": {
-      "django-html": "html",
-      "jinja-html": "html",
-      "javascript": "javascriptreact",
-      "typescript": "typescriptreact",
-      "angular.html": "html"
+      "source.organizeImports.ruff": "explicit",
+      "source.fixAll.ruff": "explicit"
     }
-}
+  },
 
+  // ========================================================================
+  // 2. FRONTEND COM PRETTIER ISOLADO (JS, TS, React, Angular, CSS, HTML)
+  // ========================================================================
+  "prettier.printWidth": 80,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "all",
+  "prettier.arrowParens": "always",
+  "prettier.htmlWhitespaceSensitivity": "ignore",
+
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true
+  },
+
+  // Configuração extra para facilitar o Debug do Node.js no VS Code
+  "debug.javascript.autoAttachFilter": "smart", // Prepara o VS Code para debugar o Node automaticamente
+
+  // ========================================================================
+  // 3. BLINDAGEM DE TEMPLATES (Django & Flask/Jinja) - Sem risco de quebrar
+  // ========================================================================
+  "[django-html]": {
+    "editor.defaultFormatter": null,
+    "editor.formatOnSave": false,
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": true,
+      "strings": true
+    }
+  },
+  "[jinja-html]": {
+    "editor.defaultFormatter": null,
+    "editor.formatOnSave": false,
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": true,
+      "strings": true
+    }
+  },
+
+  // ========================================================================
+  // 4. ASSOCIAÇÕES DE ARQUIVOS CORRIGIDAS (Sem conflito)
+  // ========================================================================
+  "files.associations": {
+    "*.jsx": "javascriptreact",
+    "*.tsx": "typescriptreact",
+    "*.env*": "properties", // Garante o realce de cores para a extensão Dotenv
+    "*.jinja": "jinja-html", // Facilita a separação de templates do Flask
+    "*.jinja2": "jinja-html",
+    "**/templates/**/*.html": "django-html",
+    "**/base_templates/**/*.html": "django-html",
+    "**/requirements{/**,*}.{txt,in}": "pip-requirements"
+  },
+
+  // ========================================================================
+  // 5. EMMET AUTOMATION (Aproveitado e corrigido da sua configuração)
+  // ========================================================================
+  "emmet.includeLanguages": {
+    "django-html": "html",
+    "jinja-html": "html",
+    "javascript": "javascriptreact",
+    "typescript": "typescriptreact",
+    "angular.html": "html"
+  },
+
+  // ========================================================================
+  // 6. TRATAMENTO DE DOCUMENTAÇÃO E CONFIGURAÇÕES (Markdown, TOML, TXT)
+  // ========================================================================
+  // Markdown (.md): O Prettier tem suporte nativo excelente
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.formatOnSave": true,
+    "editor.wordWrap": "on" // Quebra a linha visualmente para você ler textos longos sem rolar a tela
+  },
+
+  // Configurações Python (.toml como o pyproject.toml)
+  "[toml]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true
+    // Sem formatador padrão aqui para não exigir plugins extras do Prettier
+  },
+
+  // Arquivos de texto puro (.txt, .python-version, etc.)
+  "[plaintext]": {
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.wordWrap": "on"
+  },
+  // JSON padrão (ex: package.json)
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.formatOnSave": true
+  },
+
+  // JSON com comentários (ex: o próprio settings.json do VS Code ou tsconfig.json)
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.formatOnSave": true
+  },
+
+  // YAML (Muito usado em Docker Compose, arquivos do Ansible ou GitHub Actions)
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.formatOnSave": true
+  },
+
+  // Impede que a busca global (Ctrl+Shift+F) perca tempo lendo esses arquivos
+  "search.exclude": {
+    "**/__pycache__": true,
+    "**/*.pyc": true,
+    "**/.pytest_cache": true,
+    "**/.ruff_cache": true,
+    "**/node_modules": true,
+    "**/.angular/cache": true,
+    "**/*.pdf": true,
+    "**/*.docx": true,
+    "**/*.pptx": true,
+    // OBRIGATÓRIO: Impede o VS Code de tentar indexar o texto dentro dos bancos de dados
+    "**/*.sqlite3": true,
+    "**/*.sqlite": true,
+    "**/*.db": true
+  },
+
+  // ========================================================================
+  // COMPATIBILIDADE DE FIM DE LINHA (Cross-Platform: Windows, Mac, Linux)
+  // ========================================================================
+  "files.eol": "\n", // Força o VS Code a criar novos arquivos com LF (padrão Unix)
+  "prettier.endOfLine": "lf", // Evita o erro "Delete ␍" do Prettier em máquinas Windows
+  // ========================================================================
+  // COMPATIBILIDADE EXTRA E PADRONIZAÇÃO (Cross-Platform / Git)
+  // ========================================================================
+  "files.encoding": "utf8", // Garante o padrão universal UTF-8 (evita acentos quebrados)
+  "files.autoGuessEncoding": true, // Ajuda o VS Code a ler arquivos legados de outros sistemas sem corromper
+  "files.insertFinalNewline": true, // Insere uma linha vazia no fim de cada arquivo (padrão POSIX/Linux)
+  "files.trimTrailingWhitespace": true, // Remove espaços invisíveis inúteis no fim das linhas ao salvar
+  // ========================================================================
+  // INTEGRAÇÃO COM GIT AUTOMATIZADA
+  // ========================================================================
+  "git.autofetch": true, // Faz um 'git fetch' silencioso a cada poucos minutos para avisar se há commits novos no GitHub
+  "git.confirmSync": false, // Pula o aviso de confirmação chato ao clicar no botão de sincronizar commits
+  "git.enableSmartCommit": true, // Se você não selecionou nenhum arquivo mas clicar em Commit, ele assume que deseja commitar as mudanças atuais
+  // ========================================================================
+  // PRODUTIVIDADE VISUAL E NAVEGAÇÃO
+  // ========================================================================
+  "editor.stickyScroll.enabled": true, // Mantém o escopo atual (ex: nome da função ou classe) fixo no topo ao rolar a tela
+  "editor.guides.bracketPairs": "active", // Desenha linhas coloridas conectando os parênteses/chaves correspondentes
+  "editor.bracketPairColorization.enabled": true, // Colore os pares de chaves {} e colchetes [] para fácil identificação
+  "editor.minimap.autohide": "mouseover", // Oculta o minimap lateral e só o mostra quando você passa o rato (ganha espaço de tela)
+  "editor.smoothScrolling": true,
+  "editor.cursorSmoothCaretAnimation": "on",
+  "workbench.list.smoothScrolling": true,
+  // ========================================================================
+  // PERFORMANCE E CONFIGURAÇÕES DO TERMINAL INFRA
+  // ========================================================================
+  "terminal.integrated.scrollback": 10000, // Aumenta o histórico do terminal para 10 mil linhas (o padrão é muito baixo e apaga logs antigos)
+  "terminal.integrated.smoothScrolling": true, // Rolagem fluida do terminal, consome menos processamento ao exibir logs rápidos
+  "editor.cursorBlinking": "smooth", // Piscar de cursor mais suave, reduz a fadiga visual
+  "editor.cursorStyle": "line",
+
+  // ========================================================================
+  // PREVENÇÃO DE BUGS E VALIDAÇÃO ESTÁTICA SEVERA
+  // ========================================================================
+  // 1. Edição Vinculada (Evita tags HTML/Angular/JSX abertas ou órfãs)
+  "editor.linkedEditing": true,
+
+  // 2. Inlay Hints (Mostra o nome dos parâmetros direto na chamada da função)
+  "python.analysis.inlayHints.variableTypes": true,
+
+  // 3. Validações Nativas Ativas (Pega erros de sintaxe em CSS e HTML)
+  "html.validate.scripts": true,
+  "html.validate.styles": true,
+  "css.validate": true,
+  "scss.validate": true,
+  // ========================================================================
+  // COMBATE A BUGS SILENCIOSOS E ERROS DE COPIAR/COLAR
+  // ========================================================================
+  // 1. Ditadura do Espaçamento (Crucial para Python e YAML)
+  "editor.detectIndentation": false,
+
+  // 3. Fechamento Inteligente de Escopo (Evita strings e blocos órfãos)
+  "editor.autoClosingBrackets": "always",
+  "editor.autoClosingQuotes": "always",
+  "html.autoClosingTags": true
+}
