@@ -275,5 +275,13 @@
   // 3. Fechamento Inteligente de Escopo (Evita strings e blocos órfãos)
   "editor.autoClosingBrackets": "always",
   "editor.autoClosingQuotes": "always",
-  "html.autoClosingTags": true
+  "html.autoClosingTags": true,
+
+  "[java]": {
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    },
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true
+  }
 }
