@@ -307,10 +307,7 @@
   "[php]": {
     "editor.tabSize": 4,
     "editor.insertSpaces": true
-  },
-
-  "editor.scrollbar.horizontal": "visible",
-  "editor.scrollbar.vertical": "visible"
+  }
 
   // Configurações pensadas para o uso de Python (com django e flask), Node, Js,TS, react, angular, html(e modificações feitas por frameworks), css, java
   // Checagens e formatações feitas com: ESLint (Web), Prettier(Web), Ruff(Python) e Pylance(Python)
